@@ -3,15 +3,15 @@ public class ProgramaNetflix {
     private String title;
     private String type; //TODO: confirm type
     private String description;
-    private int release_year;
-    private String age_certification; //TODO: confirm type
+    private int releaseYear;
+    private String ageCertification; //TODO: confirm type
     private int runtime;
     private String[] genres; //TODO: confirm type
-    private String[] production_countries; //TODO: confirm type
+    private String[] productionCountries; //TODO: confirm type
     private int seasons; //TODO: confirm type
-    private String imdb_id;
-    private Double imdb_score; //TODO: confirm type
-    private int imdb_votes; //TODO: confirm type
-    private Double tmdb_popularity; //TODO: confirm type
-    private Double tmdb_score; //TODO: confirm type
+    private String imdbId;
+    private Double imdbScore; //TODO: confirm type
+    private int imdbVotes; //TODO: confirm type
+    private Double tmdbPopularity; //TODO: confirm type
+    private Double tmdbScore; //TODO: confirm type
 }
