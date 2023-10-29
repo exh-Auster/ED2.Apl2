@@ -38,8 +38,8 @@ public class Main {
                 case 7: //TODO
                     break;
                 case 8:
-                s.close();
-                System.exit(0);
+                    s.close();
+                    System.exit(0);
             }
         }
     }
