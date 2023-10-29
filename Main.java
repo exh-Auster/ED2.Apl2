@@ -40,6 +40,8 @@ public class Main {
                 case 8:
                     s.close();
                     System.exit(0);
+                default:
+                    System.err.println("Opção inválida.");
             }
         }
     }
