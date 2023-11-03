@@ -12,40 +12,44 @@ public class Node {
     protected Node parent;
     protected Node left;
     protected Node right;
+    private int bf;
     protected ProgramaNetflix data;
 
     public Node() {
         this.parent = null;
         this.left = null;
         this.right = null;
+        this.bf = 0;
         this.data = null;
     }
 
-    public Node(Node parent) {
-        this.parent = parent;
-        this.left = null;
-        this.right = null;
-        this.data = null;
-    }
-
-    public Node(Node left, Node right) {
-        this.parent = null;
-        this.left = left;
-        this.right = right;
-        this.data = null;
-    }
-
-    public Node(Node parent, Node left, Node right) {
-        this.parent = parent;
-        this.left = left;
-        this.right = right;
-        this.data = null;
-    }
+//    public Node(Node parent) {
+//        this.parent = parent;
+//        this.left = null;
+//        this.right = null;
+//        this.bf = 0;
+//        this.data = null;
+//    }
+//
+//    public Node(Node left, Node right) {
+//        this.parent = null;
+//        this.left = left;
+//        this.right = right;
+//        this.data = null;
+//    }
+//
+//    public Node(Node parent, Node left, Node right) {
+//        this.parent = parent;
+//        this.left = left;
+//        this.right = right;
+//        this.data = null;
+//    }
 
     public Node(ProgramaNetflix data) {
         this.parent = null;
         this.left = null;
         this.right = null;
+        this.bf = 0;
         this.data = data;
     }
 
@@ -53,21 +57,23 @@ public class Node {
         this.parent = parent;
         this.left = null;
         this.right = null;
+        this.bf = 0;
         this.data = data;
     }
 
-    public Node(Node parent, ProgramaNetflix data, Node left, Node right) {
+    public Node(Node parent, ProgramaNetflix data, Node left, Node right, int bf) {
         this.parent = parent;
         this.left = left;
         this.right = right;
+        this.bf = bf;
         this.data = data;
     }
 
-    public Node(ProgramaNetflix data, Node left, Node right) {
-        this.data = data;
-        this.left = left;
-        this.right = right;
-    }
+//    public Node(ProgramaNetflix data, Node left, Node right) {
+//        this.data = data;
+//        this.left = left;
+//        this.right = right;
+//    }
     
     public void setParent(Node parent) {
         this.parent = parent;
@@ -101,6 +107,14 @@ public class Node {
 
      public ProgramaNetflix getData() { //TODO
         return this.data;
+    }
+
+    public int getBf() {
+        return bf;
+    }
+
+    public void setBf(int bf) {
+        this.bf = bf;
     }
 
     public boolean hasLeft() {
