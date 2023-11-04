@@ -61,7 +61,7 @@ public class Node {
         this.data = data;
     }
 
-    public Node(Node parent, ProgramaNetflix data, Node left, Node right, int bf) {
+    public Node(ProgramaNetflix data, int bf, Node parent, Node left, Node right) {
         this.parent = parent;
         this.left = left;
         this.right = right;
