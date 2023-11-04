@@ -1,8 +1,12 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class Main {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner m = new Scanner(System.in);
 
         while (true) {
             int option;
@@ -20,11 +24,27 @@ public class Main {
             System.out.println();
             System.out.print("Insira a opção desejada: ");
 
-            option = s.nextInt();
+            option = m.nextInt();
 
             switch (option) {
                 case 1: //TODO
-                    break;
+                    System.out.print("Insira o nome do arquivo CSV (ou ENTER para o padrão): ");
+                    String filePath;
+                    m.nextLine();
+
+                    String opt = m.nextLine();
+
+                    filePath = opt.isEmpty() ? "./titles.csv" : opt;
+
+                    Scanner f = openFile(filePath);
+
+                    // TODO: test
+                    while (f.hasNextLine()) {
+                        String[] x = f.nextLine().split(",");
+                        System.out.println(x[0]);
+                    }
+
+
                 case 2: //TODO
                     break;
                 case 3: //TODO
@@ -38,11 +58,18 @@ public class Main {
                 case 7: //TODO
                     break;
                 case 8:
-                    s.close();
+                    m.close();
                     System.exit(0);
                 default:
                     System.err.println("Opção inválida.");
             }
         }
+    }
+
+    public static Scanner openFile(String filePath) throws FileNotFoundException {
+        Scanner f = new Scanner(new File("./titles.csv"));
+        //f.useDelimiter(",");
+
+        return f;
     }
 }
