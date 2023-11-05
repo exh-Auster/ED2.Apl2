@@ -1,15 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
-
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner m = new Scanner(System.in);
 
         while (true) {
-            int option;
+            String option;
 
             System.out.println();
             System.out.println(new String(new char[12]).replace("\0", "#") + " MENU " + new String(new char[12]).replace("\0", "#"));
@@ -24,10 +22,12 @@ public class Main {
             System.out.println();
             System.out.print("Insira a opção desejada: ");
 
-            option = m.nextInt();
+            option = m.next();
 
             switch (option) {
-                case 1: //TODO
+                case "1": //TODO
+//                    AVL titles = new AVL();
+
                     System.out.print("Insira o nome do arquivo CSV (ou ENTER para o padrão): ");
                     String filePath;
                     m.nextLine();
@@ -38,38 +38,84 @@ public class Main {
 
                     Scanner f = openFile(filePath);
 
-                    // TODO: test
+                    String line = f.nextLine();
+                    String[] lineValues;
+                    String nextLine = f.nextLine();
+
+                    int counter = 0; // TODO: remove
+
                     while (f.hasNextLine()) {
-                        String[] x = f.nextLine().split(",");
-                        System.out.println(x[0]);
+                        lineCreation: {
+                            line = nextLine;
+                            nextLine = f.nextLine();
+
+                            while (!nextLine.startsWith("ts") && !nextLine.startsWith("tm")) {
+                                line = line.concat(nextLine);
+                                nextLine = f.nextLine();
+                            }
+
+                            lineValues = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+
+//                            if (lineValues.length < 15) System.err.println(lineValues.length + Arrays.toString(lineValues));
+
+                            for (int i = 0; i < lineValues.length; i++) { // TODO
+                                if (lineValues[i].isBlank()) {
+                                    break lineCreation;
+                                }
+                            }
+
+                            if (lineValues.length != 15) {
+                                break lineCreation;
+                            }
+
+//                            ProgramaNetflix title = new ProgramaNetflix(
+//                                    lineValues[0],
+//                                    lineValues[1],
+//                                    lineValues[2],
+//                                    lineValues[3],
+//                                    Integer.parseInt(lineValues[4]),
+//                                    lineValues[5],
+//                                    Integer.parseInt(lineValues[6]),
+//                                    new String[]{lineValues[7]}, // TODO
+//                                    new String[]{lineValues[8]}, // TODO
+//                                    (int) Double.parseDouble(lineValues[9]),
+//                                    lineValues[10],
+//                                    Double.parseDouble(lineValues[11]),
+//                                    (int) Double.parseDouble(lineValues[12]),
+//                                    Double.parseDouble(lineValues[13]),
+//                                    Double.parseDouble(lineValues[14])
+//                            );
+//
+//                            titles.insert(title);
+
+                            counter++;
+
+                        }
                     }
 
-
-                case 2: //TODO
+                    System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
+                case "2": //TODO
                     break;
-                case 3: //TODO
+                case "3": //TODO
                     break;
-                case 4: //TODO
+                case "4": //TODO
                     break;
-                case 5: //TODO
+                case "5": //TODO
                     break;
-                case 6: //TODO
+                case "6": //TODO
                     break;
-                case 7: //TODO
+                case "7": //TODO
                     break;
-                case 8:
+                case "8":
                     m.close();
                     System.exit(0);
                 default:
-                    System.err.println("Opção inválida.");
+                    System.err.println("Opção inválida.\n");
             }
         }
     }
 
     public static Scanner openFile(String filePath) throws FileNotFoundException {
-        Scanner f = new Scanner(new File("./titles.csv"));
-        //f.useDelimiter(",");
-
-        return f;
+        return new Scanner(new File(filePath));
     }
 }
