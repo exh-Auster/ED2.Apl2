@@ -9,6 +9,7 @@
 */
 
 public class Node {
+    protected String key; // TODO: key
     protected Node parent;
     protected Node left;
     protected Node right;
@@ -16,6 +17,7 @@ public class Node {
     protected ProgramaNetflix data;
 
     public Node() {
+        this.key = ""; // TODO: key
         this.parent = null;
         this.left = null;
         this.right = null;
@@ -46,6 +48,7 @@ public class Node {
 //    }
 
     public Node(ProgramaNetflix data) {
+        this.key = data.getId(); // TODO: key
         this.parent = null;
         this.left = null;
         this.right = null;
@@ -54,6 +57,7 @@ public class Node {
     }
 
     public Node(Node parent, ProgramaNetflix data) {
+        this.key = data.getId(); // TODO: key
         this.parent = parent;
         this.left = null;
         this.right = null;
@@ -62,6 +66,7 @@ public class Node {
     }
 
     public Node(ProgramaNetflix data, int bf, Node parent, Node left, Node right) {
+        this.key = data.getId(); // TODO: key
         this.parent = parent;
         this.left = left;
         this.right = right;
@@ -70,6 +75,7 @@ public class Node {
     }
 
 //    public Node(ProgramaNetflix data, Node left, Node right) {
+//        this.key = data.getId(); // TODO: key
 //        this.data = data;
 //        this.left = left;
 //        this.right = right;
@@ -90,9 +96,14 @@ public class Node {
     }
 
     public void setData(ProgramaNetflix data) {
+        this.key = data.getId(); // TODO: key
         this.data = data;
     }
-    
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public Node getParent() {
         return this.parent;
     }
@@ -111,6 +122,10 @@ public class Node {
 
     public int getBf() {
         return bf;
+    }
+
+    public String getKey() {
+        return key;
     }
 
     public void setBf(int bf) {
