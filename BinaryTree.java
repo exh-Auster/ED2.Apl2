@@ -7,7 +7,7 @@
 */
 
 public class BinaryTree {
-    private Node root;
+    protected Node root;
 
     public BinaryTree() {
         this.root = null;
