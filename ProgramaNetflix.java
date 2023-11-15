@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ProgramaNetflix {
     private String id;
     private String title;
@@ -151,5 +153,24 @@ public class ProgramaNetflix {
 
     public void setTmdbScore(Double tmdbScore) {
         this.tmdbScore = tmdbScore;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + this.getId() +
+                "\nTítulo: " + this.getTitle() +
+                "\nTipo: " + this.getType() +
+                "\nDescrição: " + this.getDescription() +
+                "\nAno de lançamento: " + this.getReleaseYear() +
+                "\nClassificação: " + this.getAgeCertification() +
+                "\nDuração: " + this.getRuntime() +
+                "\nGêneros: " + Arrays.toString(this.getGenres()) + //TODO
+                "\nPaíses: " + Arrays.toString(this.getProductionCountries()) + //TODO
+                "\nNúmero de temporadas: " + this.getSeasons() +
+                "\nIMDB ID: " + this.getImdbId() +
+                "\nIMDB score: " + this.getImdbScore() +
+                "\nIMDB votes: " + this.getImdbVotes() +
+                "\nTMDB popularity: " + this.getTmdbPopularity() +
+                "\nTMDB score: " + this.getTmdbScore();
     }
 }
