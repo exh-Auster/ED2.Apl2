@@ -123,9 +123,10 @@ public class Main {
                 case "4": //TODO
                     System.out.print("Insira o ID do programa a ser buscado: ");
                     m.nextLine();
-                    String id = m.nextLine();
+                    String searchId = m.nextLine();
                     System.out.println();
-                    System.out.println(titlesBST.search(id).getData().toString());
+                    System.out.println(titlesBST.search(searchId).getData().toString());
+
                     break;
                 case "5": //TODO
                     System.out.print("Insira o ID do programa a ser removido: ");
