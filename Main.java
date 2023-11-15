@@ -128,6 +128,11 @@ public class Main {
                     System.out.println(titlesBST.search(id).getData().toString());
                     break;
                 case "5": //TODO
+                    System.out.print("Insira o ID do programa a ser removido: ");
+                    m.nextLine();
+                    String removeId = m.nextLine();
+                    titlesBST.remove(removeId);
+
                     break;
                 case "6": //TODO
                     break;
