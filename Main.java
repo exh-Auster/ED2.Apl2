@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner m = new Scanner(System.in);
+        BST titlesBST = new BST();
+//        AVL titlesAVL = new AVL();
 
         while (true) {
             String option;
@@ -26,9 +28,6 @@ public class Main {
 
             switch (option) {
                 case "1": //TODO
-                    BST titlesBST = new BST();
-//                    AVL titlesAVL = new AVL();
-
                     System.out.print("Insira o nome do arquivo CSV (ou ENTER para o padrão): ");
                     String filePath;
                     m.nextLine();
@@ -101,6 +100,10 @@ public class Main {
                 case "3": //TODO
                     break;
                 case "4": //TODO
+                    System.out.print("Insira o ID do programa a ser buscado: ");
+                    m.nextLine();
+                    String id = m.nextLine();
+                    System.out.println(titlesBST.search(id).getData().toString());
                     break;
                 case "5": //TODO
                     break;
