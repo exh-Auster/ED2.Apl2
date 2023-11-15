@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         Scanner m = new Scanner(System.in);
         BST titlesBST = new BST();
 //        AVL titlesAVL = new AVL();
@@ -63,40 +63,55 @@ public class Main {
                             lineValues = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
 
 //                            if (lineValues.length < 15) System.err.println(lineValues.length + Arrays.toString(lineValues));
-
-                            for (int i = 0; i < lineValues.length; i++) { // TODO
-                                if (lineValues[i].isBlank()) {
-                                    break lineCreation;
-                                }
-                            }
+//
+//                            for (int i = 0; i < lineValues.length; i++) { // TODO
+//                                if (lineValues[i].isBlank()) {
+//                                    break lineCreation;
+//                                }
+//                            }
 
                             if (lineValues.length != 15) {
                                 break lineCreation;
                             }
 
+                            String id = lineValues[0];
+                            String titleName = lineValues[1].isBlank() ? "" : lineValues[1];
+                            String type = lineValues[2];
+                            String description = lineValues[3].isBlank() ? "" : lineValues[3];
+                            int releaseYear = Integer.parseInt(lineValues[4]);
+                            String ageCertification = lineValues[5].isBlank() ? "" : lineValues[5];
+                            int runtime = Integer.parseInt(lineValues[6]);
+                            String[] genres = new String[]{lineValues[7]}; // TODO
+                            String[] productionCountries = new String[]{lineValues[8]}; // TODO
+                            int seasons = lineValues[9].isBlank() ? -1 : (int) Double.parseDouble(lineValues[9]);
+                            String imdbId = lineValues[10].isBlank() ? "" : lineValues[10];
+                            Double imdbScore = lineValues[11].isBlank() ? -1 : Double.parseDouble(lineValues[11]);
+                            int imdbVotes = lineValues[12].isBlank() ? -1 : (int) Double.parseDouble(lineValues[12]);
+                            Double tmdbPopularity = lineValues[13].isBlank() ? -1 : Double.parseDouble(lineValues[13]);
+                            Double tmdbScore = lineValues[14].isBlank() ? -1 : Double.parseDouble(lineValues[14]);
+
                             ProgramaNetflix title = new ProgramaNetflix(
-                                    lineValues[0],
-                                    lineValues[1],
-                                    lineValues[2],
-                                    lineValues[3],
-                                    Integer.parseInt(lineValues[4]),
-                                    lineValues[5],
-                                    Integer.parseInt(lineValues[6]),
-                                    new String[]{lineValues[7]}, // TODO
-                                    new String[]{lineValues[8]}, // TODO
-                                    (int) Double.parseDouble(lineValues[9]),
-                                    lineValues[10],
-                                    Double.parseDouble(lineValues[11]),
-                                    (int) Double.parseDouble(lineValues[12]),
-                                    Double.parseDouble(lineValues[13]),
-                                    Double.parseDouble(lineValues[14])
+                                    id,
+                                    titleName,
+                                    type,
+                                    description,
+                                    releaseYear,
+                                    ageCertification,
+                                    runtime,
+                                    genres,
+                                    productionCountries,
+                                    seasons,
+                                    imdbId,
+                                    imdbScore,
+                                    imdbVotes,
+                                    tmdbPopularity,
+                                    tmdbScore
                             );
 
                             titlesBST.insert(title);
 //                            titlesAVL.insert(title);
 
-                            counter++;
-
+                            counter++; // TODO: remove
                         }
                     }
 
