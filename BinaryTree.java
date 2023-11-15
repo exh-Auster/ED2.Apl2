@@ -29,6 +29,14 @@ public class BinaryTree {
         this.root = root;
     }
 
+	public int getHeight() {
+		if (isEmpty()) {
+			return -1;
+		}
+
+		return root.getHeight();
+	}
+
     public String inorderTraversal() {
 		return inorderTraversal(root);
 	}

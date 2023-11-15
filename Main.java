@@ -136,6 +136,9 @@ public class Main {
 
                     break;
                 case "6": //TODO
+                    System.out.printf("Altura da BST: %d%n", titlesBST.getHeight());
+//                    System.out.printf("Altura da AVL: %d%n", titlesAVL.getHeight());
+
                     break;
                 case "7": //TODO
                     break;
