@@ -26,7 +26,8 @@ public class Main {
 
             switch (option) {
                 case "1": //TODO
-//                    AVL titles = new AVL();
+                    BST titlesBST = new BST();
+//                    AVL titlesAVL = new AVL();
 
                     System.out.print("Insira o nome do arquivo CSV (ou ENTER para o padrão): ");
                     String filePath;
@@ -68,25 +69,26 @@ public class Main {
                                 break lineCreation;
                             }
 
-//                            ProgramaNetflix title = new ProgramaNetflix(
-//                                    lineValues[0],
-//                                    lineValues[1],
-//                                    lineValues[2],
-//                                    lineValues[3],
-//                                    Integer.parseInt(lineValues[4]),
-//                                    lineValues[5],
-//                                    Integer.parseInt(lineValues[6]),
-//                                    new String[]{lineValues[7]}, // TODO
-//                                    new String[]{lineValues[8]}, // TODO
-//                                    (int) Double.parseDouble(lineValues[9]),
-//                                    lineValues[10],
-//                                    Double.parseDouble(lineValues[11]),
-//                                    (int) Double.parseDouble(lineValues[12]),
-//                                    Double.parseDouble(lineValues[13]),
-//                                    Double.parseDouble(lineValues[14])
-//                            );
-//
-//                            titles.insert(title);
+                            ProgramaNetflix title = new ProgramaNetflix(
+                                    lineValues[0],
+                                    lineValues[1],
+                                    lineValues[2],
+                                    lineValues[3],
+                                    Integer.parseInt(lineValues[4]),
+                                    lineValues[5],
+                                    Integer.parseInt(lineValues[6]),
+                                    new String[]{lineValues[7]}, // TODO
+                                    new String[]{lineValues[8]}, // TODO
+                                    (int) Double.parseDouble(lineValues[9]),
+                                    lineValues[10],
+                                    Double.parseDouble(lineValues[11]),
+                                    (int) Double.parseDouble(lineValues[12]),
+                                    Double.parseDouble(lineValues[13]),
+                                    Double.parseDouble(lineValues[14])
+                            );
+
+                            titlesBST.insert(title);
+//                            titlesAVL.insert(title);
 
                             counter++;
 
