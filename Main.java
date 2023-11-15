@@ -36,7 +36,13 @@ public class Main {
 
                     filePath = opt.isEmpty() ? "./titles.csv" : opt;
 
-                    Scanner f = openFile(filePath);
+                    Scanner f;
+                    try {
+                        f = openFile(filePath);
+                    } catch (FileNotFoundException e) {
+                        System.err.println("Arquivo não encontrado - tente novamente.\n");
+                        break;
+                    }
 
                     String line = f.nextLine();
                     String[] lineValues;
@@ -103,6 +109,7 @@ public class Main {
                     System.out.print("Insira o ID do programa a ser buscado: ");
                     m.nextLine();
                     String id = m.nextLine();
+                    System.out.println();
                     System.out.println(titlesBST.search(id).getData().toString());
                     break;
                 case "5": //TODO
