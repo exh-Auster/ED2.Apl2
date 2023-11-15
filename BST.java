@@ -29,12 +29,25 @@ public class BST extends BinaryTree {
         return node;
     }
 
-    public void insert(ProgramaNetflix data) {
-        //TODO
+    public void insert(ProgramaNetflix data) { //TODO: check
+        super.setRoot(insert(super.getRoot(), null, data));
     }
 
-    private void insert() { //TODO
-        //TODO
+    private Node insert(Node node, Node parent, ProgramaNetflix data) { //TODO: check
+        if (node == null) {
+            return new Node(parent, data);
+        }
+        int diff = data.getId().compareTo(node.getKey());
+
+        if (diff < 0) {
+            node.setLeft(insert(node.getLeft(), node, data));
+        } else if (diff > 0) {
+            node.setRight(insert(node.getRight(), node, data));
+        } else {
+            System.err.println("Duplicatas não são permitidas nessa implementação.");
+        }
+
+        return node;
     }
 
     public void remove(String id) {
