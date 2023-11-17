@@ -3,6 +3,27 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * Método utilizado para pausar a execução do programa por 1500ms.
+     */
+    public static void sleep() {
+        sleep(1500);
+    }
+
+    /**
+     * Método utilizado para pausar a execução do programa por um determinado tempo.
+     *
+     * @param ms tempo em milissegundos
+     */
+    public static void sleep(int ms) {
+        try {
+            Thread.sleep(ms);
+        }
+        catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner m = new Scanner(System.in);
         BST titlesBST = new BST();
