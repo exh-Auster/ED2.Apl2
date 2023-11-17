@@ -141,6 +141,7 @@ public class Main {
                         }
                     }
 
+                    System.out.println("Árvores criadas com sucesso!");
                     System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
 
                     maxCompleted = 1;
