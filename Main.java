@@ -121,18 +121,29 @@ public class Main {
                 case "3": //TODO
                     break;
                 case "4": //TODO
-                    System.out.print("Insira o ID do programa a ser buscado: ");
+                    System.out.print("\nInsira o ID do programa a ser buscado: ");
                     m.nextLine();
                     String searchId = m.nextLine();
                     System.out.println();
-                    System.out.println(titlesBST.search(searchId).getData().toString());
+
+                    try {
+                        System.out.println(titlesBST.search(searchId).getData().toString());
+                    } catch (NullPointerException e) {
+                        System.out.println("Programa não encontrado.");
+                    }
 
                     break;
                 case "5": //TODO
-                    System.out.print("Insira o ID do programa a ser removido: ");
+                    System.out.print("\nInsira o ID do programa a ser removido: ");
                     m.nextLine();
                     String removeId = m.nextLine();
-                    titlesBST.remove(removeId);
+                    System.out.println();
+
+                    try {
+                        titlesBST.remove(removeId);
+                    } catch (NullPointerException e) {
+                        System.out.println("Programa não encontrado.");
+                    }
 
                     break;
                 case "6": //TODO
