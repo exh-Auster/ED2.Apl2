@@ -44,7 +44,7 @@ public class BST extends BinaryTree {
         } else if (diff > 0) {
             node.setRight(insert(node.getRight(), node, data));
         } else {
-            System.err.println("Duplicatas não são permitidas nessa implementação.");
+            System.err.printf("Duplicatas não são permitidas nessa implementação - pulando a inserção de %s%n", data.getId());
         }
 
         return node;
