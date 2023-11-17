@@ -142,6 +142,8 @@ public class Main {
                     }
 
                     System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
+
+                    maxCompleted = 1;
                 case "2": //TODO
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
