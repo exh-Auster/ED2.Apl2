@@ -29,6 +29,10 @@ public class Main {
         BST titlesBST = new BST();
 //        AVL titlesAVL = new AVL();
 
+        int maxCompleted = 0;
+        String notCompleted = "   ";
+        String completed = " x ";
+
         while (true) {
             String option;
 
@@ -133,15 +137,33 @@ public class Main {
 //                            titlesAVL.insert(title);
 
                             counter++; // TODO: remove
+                            maxCompleted = 1;
                         }
                     }
 
                     System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
                 case "2": //TODO
+                    if (maxCompleted < 1) {
+                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
+                        break;
+                    }
+
+                    maxCompleted = 2;
                     break;
                 case "3": //TODO
+                    if (maxCompleted < 1) {
+                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de inserir novos programas.");
+                        break;
+                    }
+
+                    maxCompleted = 3;
                     break;
                 case "4": //TODO
+                    if (maxCompleted < 1) {
+                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar buscas.");
+                        break;
+                    }
+
                     System.out.print("\nInsira o ID do programa a ser buscado: ");
                     m.nextLine();
                     String searchId = m.nextLine();
@@ -153,8 +175,14 @@ public class Main {
                         System.out.println("Programa não encontrado.");
                     }
 
+                    maxCompleted = 4;
                     break;
                 case "5": //TODO
+                    if (maxCompleted < 1) {
+                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar remoções.");
+                        break;
+                    }
+
                     System.out.print("\nInsira o ID do programa a ser removido: ");
                     m.nextLine();
                     String removeId = m.nextLine();
@@ -166,13 +194,26 @@ public class Main {
                         System.out.println("Programa não encontrado.");
                     }
 
+                    maxCompleted = 5;
                     break;
                 case "6": //TODO
+                    if (maxCompleted < 1) {
+                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de calcular a altura das árvores.");
+                        break;
+                    }
+
                     System.out.printf("Altura da BST: %d%n", titlesBST.getHeight());
 //                    System.out.printf("Altura da AVL: %d%n", titlesAVL.getHeight());
 
+                    maxCompleted = 6;
                     break;
                 case "7": //TODO
+                    if (maxCompleted < 1) {
+                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar buscas.");
+                        break;
+                    }
+
+                    maxCompleted = 7;
                     break;
                 case "8":
                     m.close();
