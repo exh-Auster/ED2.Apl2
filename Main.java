@@ -69,7 +69,9 @@ public class Main {
                     try {
                         f = openFile(filePath);
                     } catch (FileNotFoundException e) {
-                        System.err.println("Arquivo não encontrado - tente novamente.\n");
+                        System.err.println("\nArquivo não encontrado - tente novamente.");
+                        sleep();
+
                         break;
                     }
 
