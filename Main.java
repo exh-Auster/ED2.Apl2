@@ -179,7 +179,14 @@ public class Main {
                     System.out.println();
 
                     try {
-                        System.out.println(titlesBST.search(searchId).getData().toString());
+                        Instant avlStart = Instant.now();
+                        Node result = titlesBST.search(searchId);
+                        Instant avlEnd = Instant.now();
+                        Duration timeElapsed = Duration.between(avlStart, avlEnd);
+
+                        System.out.printf("Tempo de busca via BST: %d ns%n%n", timeElapsed.toNanos());
+
+                        System.out.println(result.getData().toString());
                     } catch (NullPointerException e) {
                         System.out.printf("Programa %s não encontrado.%n", searchId);
                     }
