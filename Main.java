@@ -171,6 +171,7 @@ public class Main {
                     System.out.println(stats1.preorderTraversal());
 
                     maxCompleted = 2;
+                    sleep();
                     break;
                 case "3": //TODO
                     if (maxCompleted < 1) {
@@ -183,6 +184,7 @@ public class Main {
                     System.out.println(stats2.inorderTraversal());
 
                     maxCompleted = 3;
+                    sleep();
                     break;
                 case "4":
                     if (maxCompleted < 1) {
@@ -195,6 +197,7 @@ public class Main {
                     System.out.println(stats3.postorderTraversal());
 
                     maxCompleted = 4;
+                    sleep();
                     break;
                 case "5": //TODO
                     if (maxCompleted < 1) {
@@ -206,6 +209,7 @@ public class Main {
 //                    stats4.preorderTraversal();
 
                     maxCompleted = 5;
+                    sleep();
                     break;
                 case "6":
                     if (maxCompleted < 1) {
@@ -218,6 +222,7 @@ public class Main {
                     System.out.println(stats5.preorderTraversal());
 
                     maxCompleted = 6;
+                    sleep();
                     break;
                 case "7": //TODO
                     if (maxCompleted < 1) {
@@ -226,6 +231,7 @@ public class Main {
                     }
 
                     maxCompleted = 7;
+                    sleep();
                     break;
                 case "8": //TODO
                     if (maxCompleted < 1) {
