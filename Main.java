@@ -27,7 +27,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner m = new Scanner(System.in);
         BST titlesBST = new BST();
-//        AVL titlesAVL = new AVL();
+        AVL titlesAVL = new AVL();
 
         int maxCompleted = 0;
         String notCompleted = "   ";
@@ -140,7 +140,7 @@ public class Main {
                             );
 
                             titlesBST.insert(title);
-//                            titlesAVL.insert(title);
+                            titlesAVL.insert(title);
 
                             counter++; // TODO: remove
                             maxCompleted = 1;
@@ -148,6 +148,8 @@ public class Main {
                     }
 
                     System.out.println("Árvores criadas com sucesso!");
+                    System.out.println("\nÁrvores criadas com sucesso!");
+                    sleep();
                     System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
 
                     maxCompleted = 1;
