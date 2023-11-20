@@ -102,14 +102,6 @@ public class Main {
 
                             lineValues = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
 
-//                            if (lineValues.length < 15) System.err.println(lineValues.length + Arrays.toString(lineValues));
-//
-//                            for (int i = 0; i < lineValues.length; i++) { // TODO
-//                                if (lineValues[i].isBlank()) {
-//                                    break lineCreation;
-//                                }
-//                            }
-
                             if (lineValues.length != 15) {
                                 break lineCreation;
                             }
