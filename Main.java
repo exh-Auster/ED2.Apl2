@@ -181,7 +181,7 @@ public class Main {
                     try {
                         System.out.println(titlesBST.search(searchId).getData().toString());
                     } catch (NullPointerException e) {
-                        System.out.println("Programa não encontrado.");
+                        System.out.printf("Programa %s não encontrado.%n", searchId);
                     }
 
                     maxCompleted = 4;
@@ -200,7 +200,7 @@ public class Main {
                     try {
                         titlesBST.remove(removeId);
                     } catch (NullPointerException e) {
-                        System.out.println("Programa não encontrado.");
+                        System.out.printf("Programa %s não encontrado.%n", removeId);
                     }
 
                     maxCompleted = 5;
