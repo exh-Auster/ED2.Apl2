@@ -58,7 +58,7 @@ public class Main {
                 System.out.println("11. Salvar Dados em Arquivo");
             }
 
-            System.out.println("12. Encerrar a Aplicação");
+            System.out.println("\n 0. Encerrar a Aplicação");
             System.out.println();
             System.out.print("Insira a opção desejada: ");
 
@@ -304,7 +304,7 @@ public class Main {
                     maxCompleted = 11;
                     sleep();
                     break;
-                case "12":
+                case "0":
                     m.close();
                     System.exit(0);
                 default:
