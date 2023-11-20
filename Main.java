@@ -32,8 +32,6 @@ public class Main {
         AVL titlesAVL = new AVL();
 
         int maxCompleted = 0;
-        String notCompleted = "   ";
-        String completed = " x ";
 
         while (true) {
             String option;
