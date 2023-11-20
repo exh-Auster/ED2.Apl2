@@ -156,6 +156,13 @@ public class ProgramaNetflix {
     }
 
     public String toLine() {
+        int seasons = this.getSeasons();
+        Double imdbScore = this.getImdbScore();
+        int imdbVotes = this.getImdbVotes();
+        Double tmdbPopularity = this.getTmdbPopularity();
+        Double tmdbScore = this.getTmdbScore();
+
+
         return this.getId() + "," +
                this.getTitle() + "," +
                this.getType() + "," +
@@ -165,12 +172,12 @@ public class ProgramaNetflix {
                this.getRuntime() + "," +
                Arrays.toString(this.getGenres()) + "," +
                Arrays.toString(this.getProductionCountries()) + "," +
-               this.getSeasons() + "," +
+               (seasons == -1 ? "" : seasons) + "," +
                this.getImdbId() + "," +
-               this.getImdbScore() + "," +
-               this.getImdbVotes() + "," +
-               this.getTmdbPopularity() + "," +
-               this.getTmdbScore() + "\n";
+               (imdbScore == -1 ? "" : imdbScore) + "," +
+               (imdbVotes == -1 ? "" : imdbVotes) + "," +
+               (tmdbPopularity == -1 ? "" : tmdbPopularity) + "," +
+               (tmdbScore == -1 ? "" : tmdbScore) + "\n";
     }
 
     @Override
