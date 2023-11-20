@@ -46,9 +46,9 @@ public class Main {
                 System.out.println();
                 System.out.println(" 2. Séries de animes com mais de uma temporada e classificação adequada para crianças");
                 System.out.println(" 3. Documentários históricos com classificação +16");
-                System.out.println(" 4. Filmes com IMDB score acima de um valor inserido pelo usuário, que não são de origem dos Estados Unidos, Canadá ou Reino Unido:");
+                System.out.println(" 4. Filmes com IMDB score acima do valor inserido, que não são de origem dos EUA, Canadá ou Reino Unido");
                 System.out.println(" 5. ");
-                System.out.println(" 6. Filmes com duração maior que três horas e com score alto");
+                System.out.println(" 6. Filmes com duração maior que três horas e score acima de 8");
                 System.out.println();
 
                 System.out.println(" 7. Inserir Programa");
@@ -160,13 +160,14 @@ public class Main {
                     System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
 
                     maxCompleted = 1;
-                case "2": //TODO
+                case "2":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
                         break;
                     }
 
                     AVL stats1 = titlesAVL.stats1();
+                    System.out.println("\nSéries de animes com mais de uma temporada e classificação adequada para crianças:\n");
                     System.out.println(stats1.preorderTraversal());
 
                     maxCompleted = 2;
@@ -178,18 +179,20 @@ public class Main {
                     }
 
                     AVL stats2 = titlesAVL.stats2();
-                    System.out.println(stats2.preorderTraversal());
+                    System.out.println("\nDocumentários históricos com classificação +16:\n");
+                    System.out.println(stats2.inorderTraversal());
 
                     maxCompleted = 3;
                     break;
-                case "4": //TODO
+                case "4":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
                         break;
                     }
 
                     AVL stats3 = titlesAVL.stats3();
-                    System.out.println(stats3.preorderTraversal());
+                    System.out.println("\nFilmes com IMDB score acima do valor inserido, que não são de origem dos EUA, Canadá ou Reino Unido:\n");
+                    System.out.println(stats3.postorderTraversal());
 
                     maxCompleted = 4;
                     break;
@@ -204,13 +207,14 @@ public class Main {
 
                     maxCompleted = 5;
                     break;
-                case "6": //TODO
+                case "6":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
                         break;
                     }
 
                     AVL stats5 = titlesAVL.stats5();
+                    System.out.println("\nFilmes com duração maior que três horas e score acima de 8:\n");
                     System.out.println(stats5.preorderTraversal());
 
                     maxCompleted = 6;
