@@ -46,7 +46,7 @@ public class Main {
             System.out.println(new String(new char[12]).replace("\0", "#") + " MENU " + new String(new char[12]).replace("\0", "#"));
             System.out.println(" 1. Ler dados de arquivo");
 
-            if (maxCompleted > 1) {
+            if (maxCompleted >= 1) {
                 System.out.println();
                 System.out.println(" 2. Séries de animes com mais de uma temporada e classificação adequada para crianças");
                 System.out.println(" 3. Documentários históricos com classificação +16");
