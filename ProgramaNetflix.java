@@ -155,6 +155,24 @@ public class ProgramaNetflix {
         this.tmdbScore = tmdbScore;
     }
 
+    public String toLine() {
+        return this.getId() + "," +
+               this.getTitle() + "," +
+               this.getType() + "," +
+               this.getDescription() + "," +
+               this.getReleaseYear() + "," +
+               this.getAgeCertification() + "," +
+               this.getRuntime() + "," +
+               Arrays.toString(this.getGenres()) + "," +
+               Arrays.toString(this.getProductionCountries()) + "," +
+               this.getSeasons() + "," +
+               this.getImdbId() + "," +
+               this.getImdbScore() + "," +
+               this.getImdbVotes() + "," +
+               this.getTmdbPopularity() + "," +
+               this.getTmdbScore() + "\n";
+    }
+
     @Override
     public String toString() {
         return "ID: " + this.getId() +

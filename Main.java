@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Scanner;
@@ -26,7 +25,14 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void writeCsv(String filePath, String data) throws IOException {
+        FileWriter fileWriter = new FileWriter(filePath);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        printWriter.println("id,title,type,description,release_year,age_certification,runtime,genres,production_countries,seasons,imdb_id,imdb_score,imdb_votes,tmdb_popularity,tmdb_score");
+        printWriter.print(data);
+    }
+
+    public static void main(String[] args) throws IOException {
         Scanner m = new Scanner(System.in);
         BST titlesBST = new BST();
         AVL titlesAVL = new AVL();
@@ -299,6 +305,21 @@ public class Main {
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar buscas.");
                         break;
+                    }
+
+                    System.out.print("\nInsira o nome do arquivo CSV (ou ENTER para o padrão): ");
+                    String writePath;
+                    m.nextLine();
+
+                    opt = m.nextLine();
+
+                    writePath = opt.isEmpty() ? "./output.csv" : opt;
+
+                    try {
+                        writeCsv(writePath, titlesAVL.toCsv());
+                        System.out.printf("%nDados salvos em %s!%n", writePath);
+                    } catch (IOException e) {
+                        System.err.println("Erro na gravação do arquivo.");
                     }
 
                     maxCompleted = 11;

@@ -310,4 +310,22 @@ public class AVL extends BST {
             }
         }
     }
+
+    public String toCsv() {
+        return toCsv(root);
+    }
+
+    private String toCsv(Node node) {
+        if (node == null) {
+            return "";
+        }
+
+        StringBuilder traversal = new StringBuilder();
+
+        traversal.append(toCsv(node.getLeft()));
+        traversal.append(node.getData().toLine());
+        traversal.append(toCsv(node.getRight()));
+
+        return traversal.toString();
+    }
 }
