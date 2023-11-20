@@ -14,7 +14,6 @@ public class Node {
     protected Node left;
     protected Node right;
     protected int height;
-    private int bf;
     protected ProgramaNetflix data;
 
     public Node() {
@@ -22,38 +21,14 @@ public class Node {
         this.parent = null;
         this.left = null;
         this.right = null;
-        this.bf = 0;
         this.data = null;
     }
-
-//    public Node(Node parent) {
-//        this.parent = parent;
-//        this.left = null;
-//        this.right = null;
-//        this.bf = 0;
-//        this.data = null;
-//    }
-//
-//    public Node(Node left, Node right) {
-//        this.parent = null;
-//        this.left = left;
-//        this.right = right;
-//        this.data = null;
-//    }
-//
-//    public Node(Node parent, Node left, Node right) {
-//        this.parent = parent;
-//        this.left = left;
-//        this.right = right;
-//        this.data = null;
-//    }
 
     public Node(ProgramaNetflix data) {
         this.key = data.getId(); // TODO: key
         this.parent = null;
         this.left = null;
         this.right = null;
-        this.bf = 0;
         this.data = data;
     }
 
@@ -62,25 +37,8 @@ public class Node {
         this.parent = parent;
         this.left = null;
         this.right = null;
-        this.bf = 0;
         this.data = data;
     }
-
-    public Node(ProgramaNetflix data, int bf, Node parent, Node left, Node right) {
-        this.key = data.getId(); // TODO: key
-        this.parent = parent;
-        this.left = left;
-        this.right = right;
-        this.bf = bf;
-        this.data = data;
-    }
-
-//    public Node(ProgramaNetflix data, Node left, Node right) {
-//        this.key = data.getId(); // TODO: key
-//        this.data = data;
-//        this.left = left;
-//        this.right = right;
-//    }
     
     public void setParent(Node parent) {
         this.parent = parent;
@@ -121,16 +79,8 @@ public class Node {
         return this.data;
     }
 
-    public int getBf() {
-        return bf;
-    }
-
     public String getKey() {
         return key;
-    }
-
-    public void setBf(int bf) {
-        this.bf = bf;
     }
 
     public boolean hasLeft() {
