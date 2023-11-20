@@ -3,19 +3,19 @@ import java.util.Arrays;
 public class ProgramaNetflix {
     private String id;
     private String title;
-    private String type; //TODO: confirm type
+    private String type;
     private String description;
     private int releaseYear;
     private String ageCertification; //TODO: confirm type
     private int runtime;
     private String[] genres; //TODO: confirm type
     private String[] productionCountries; //TODO: confirm type
-    private int seasons; //TODO: confirm type
+    private int seasons;
     private String imdbId;
-    private Double imdbScore; //TODO: confirm type
-    private int imdbVotes; //TODO: confirm type
-    private Double tmdbPopularity; //TODO: confirm type
-    private Double tmdbScore; //TODO: confirm type
+    private Double imdbScore;
+    private int imdbVotes;
+    private Double tmdbPopularity;
+    private Double tmdbScore;
 
     public ProgramaNetflix(String id, String title, String type, String description, int releaseYear, String ageCertification, int runtime, String[] genres, String[] productionCountries, int seasons, String imdbId, Double imdbScore, int imdbVotes, Double tmdbPopularity, Double tmdbScore) {
         this.id = id;
