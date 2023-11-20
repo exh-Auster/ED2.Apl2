@@ -13,6 +13,7 @@ public class Node {
     protected Node parent;
     protected Node left;
     protected Node right;
+    protected int height;
     private int bf;
     protected ProgramaNetflix data;
 
