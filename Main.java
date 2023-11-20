@@ -66,7 +66,7 @@ public class Main {
 
             switch (option) {
                 case "1": //TODO
-                    System.out.print("Insira o nome do arquivo CSV (ou ENTER para o padrão): ");
+                    System.out.print("\nInsira o nome do arquivo CSV (ou ENTER para o padrão): ");
                     String filePath;
                     m.nextLine();
 
@@ -152,6 +152,8 @@ public class Main {
                     System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
 
                     maxCompleted = 1;
+                    sleep();
+                    break;
                 case "2":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
