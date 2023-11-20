@@ -1,4 +1,6 @@
 public class BST extends BinaryTree {
+    private int numOfComparisons;
+
     public BST() {
         super();
     }
@@ -7,7 +9,12 @@ public class BST extends BinaryTree {
         super(root);
     }
 
+    public int getNumOfComparisons() {
+        return numOfComparisons;
+    }
+
     public Node search(String id) {
+        numOfComparisons = 0;
         return search(super.getRoot(), id);
     }
 
@@ -17,6 +24,7 @@ public class BST extends BinaryTree {
         }
 
         int diff = id.compareToIgnoreCase(node.getData().getId()); //TODO: check
+        numOfComparisons++;
 
         if (diff < 0) {
             return search(node.getLeft(), id);
@@ -37,6 +45,7 @@ public class BST extends BinaryTree {
         if (node == null) {
             return new Node(parent, data);
         }
+
         int diff = data.getId().compareTo(node.getKey());
 
         if (diff < 0) {
