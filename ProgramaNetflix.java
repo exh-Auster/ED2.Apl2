@@ -182,6 +182,12 @@ public class ProgramaNetflix {
 
     @Override
     public String toString() {
+        String seasons = this.getSeasons() == -1 ? "" : String.valueOf(this.getSeasons());
+        String imdbScore = this.getImdbScore() == -1 ? "" : String.valueOf(this.getImdbScore());;
+        String imdbVotes = this.getImdbVotes() == -1 ? "" : String.valueOf(this.getImdbVotes());;;
+        String tmdbPopularity = this.getTmdbPopularity() == -1 ? "" : String.valueOf(this.getTmdbPopularity());;;
+        String tmdbScore = this.getTmdbScore() == -1 ? "" : String.valueOf(this.getTmdbScore());;;
+
         return "ID: " + this.getId() +
                 "\nTítulo: " + this.getTitle() +
                 "\nTipo: " + this.getType() +
@@ -191,11 +197,11 @@ public class ProgramaNetflix {
                 "\nDuração: " + this.getRuntime() +
                 "\nGêneros: " + Arrays.toString(this.getGenres()) + //TODO
                 "\nPaíses: " + Arrays.toString(this.getProductionCountries()) + //TODO
-                "\nNúmero de temporadas: " + this.getSeasons() +
+                "\nNúmero de temporadas: " + seasons +
                 "\nIMDB ID: " + this.getImdbId() +
-                "\nIMDB score: " + this.getImdbScore() +
-                "\nIMDB votes: " + this.getImdbVotes() +
-                "\nTMDB popularity: " + this.getTmdbPopularity() +
-                "\nTMDB score: " + this.getTmdbScore();
+                "\nIMDB score: " + imdbScore +
+                "\nIMDB votes: " + imdbVotes +
+                "\nTMDB popularity: " + tmdbPopularity +
+                "\nTMDB score: " + tmdbScore;
     }
 }
