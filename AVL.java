@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class AVL extends BST {
     private int numOfComparisons;
-    private Scanner s = new Scanner(System.in);
+    private final Scanner s = new Scanner(System.in);
 
     public void insert(ProgramaNetflix data) {
         root = insert(root, data);
