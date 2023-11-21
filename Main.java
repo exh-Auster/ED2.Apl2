@@ -51,7 +51,7 @@ public class Main {
                 System.out.println(" 2. Séries de animes com mais de uma temporada e classificação adequada para crianças");
                 System.out.println(" 3. Documentários históricos com classificação +16");
                 System.out.println(" 4. Filmes com IMDB score acima do valor inserido, que não são de origem dos EUA, Canadá ou Reino Unido");
-                System.out.println(" 5. ");
+                System.out.println(" 5. Programas de TV com 3 ou mais temporadas e IMDB score abaixo de 4");
                 System.out.println(" 6. Filmes com duração maior que três horas e score acima de 8");
                 System.out.println();
 
@@ -203,8 +203,9 @@ public class Main {
                         break;
                     }
 
-//                    AVL stats4 = titlesAVL.stats4();
-//                    stats4.preorderTraversal();
+                    AVL stats4 = titlesAVL.stats4();
+                    System.out.println("\nProgramas de TV com 3 ou mais temporadas e IMDB score abaixo de 4:\n");
+                    System.out.println(stats4.preorderTraversal());
 
                     maxCompleted = 5;
                     sleep();

@@ -268,6 +268,49 @@ public class AVL extends BST {
         }
     }
 
+    public AVL stats4() {
+        return stats4(this.root);
+    }
+
+    private AVL stats4(Node node) {
+        if (node == null) {
+            return null;
+        }
+
+        AVL left = stats4(node.getLeft());
+        AVL right = stats4(node.getRight());
+
+        ProgramaNetflix data = node.getData();
+
+        Boolean typeCheck = data.getType().equals("SHOW");
+        Boolean seasonsCheck = data.getSeasons() >= 3;
+        Boolean imdbScoreCheck = data.getImdbScore() < 4;
+
+        if (typeCheck && seasonsCheck && imdbScoreCheck) {
+            AVL newTree = new AVL();
+            newTree.insert(node.data);
+
+            if (left != null) {
+                newTree.root.left = left.root;
+            }
+
+            if (right != null) {
+                newTree.root.right = right.root;
+            }
+
+            return newTree;
+        } else {
+            if (left != null) {
+                if (right != null) {
+                    left.root.right = right.root;
+                }
+                return left;
+            } else {
+                return right;
+            }
+        }
+    }
+
     public AVL stats5() {
         return stats5(this.root);
     }
