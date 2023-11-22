@@ -11,7 +11,7 @@
 */
 
 public class Node {
-    protected String key; // TODO: key
+    protected String key;
     protected Node parent;
     protected Node left;
     protected Node right;
@@ -19,7 +19,7 @@ public class Node {
     protected ProgramaNetflix data;
 
     public Node() {
-        this.key = ""; // TODO: key
+        this.key = "";
         this.parent = null;
         this.left = null;
         this.right = null;
@@ -27,7 +27,7 @@ public class Node {
     }
 
     public Node(ProgramaNetflix data) {
-        this.key = data.getId(); // TODO: key
+        this.key = data.getId();
         this.parent = null;
         this.left = null;
         this.right = null;
@@ -35,7 +35,7 @@ public class Node {
     }
 
     public Node(Node parent, ProgramaNetflix data) {
-        this.key = data.getId(); // TODO: key
+        this.key = data.getId();
         this.parent = parent;
         this.left = null;
         this.right = null;
@@ -57,7 +57,7 @@ public class Node {
     }
 
     public void setData(ProgramaNetflix data) {
-        this.key = data.getId(); // TODO: key
+        this.key = data.getId();
         this.data = data;
     }
 
@@ -77,7 +77,7 @@ public class Node {
         return this.right;
     }
 
-     public ProgramaNetflix getData() { //TODO
+     public ProgramaNetflix getData() {
         return this.data;
     }
 
