@@ -55,7 +55,7 @@ public class BinaryTree {
 		StringBuilder traversal = new StringBuilder();
 		
 		traversal.append(inorderTraversal(node.getLeft()));
-		traversal.append(node.getData() + "\n\n"); //TODO
+		traversal.append(node.getData() + "\n\n");
 		traversal.append(inorderTraversal(node.getRight()));
 		
 		return traversal.toString();
@@ -78,7 +78,7 @@ public class BinaryTree {
 
 		StringBuilder traversal = new StringBuilder();
 		
-		traversal.append(node.getData() + "\n\n"); //TODO
+		traversal.append(node.getData() + "\n\n");
 		traversal.append(preorderTraversal(node.getLeft()));
 		traversal.append(preorderTraversal(node.getRight()));
 		
@@ -104,7 +104,7 @@ public class BinaryTree {
 
 		traversal.append(postorderTraversal(node.getLeft()));
 		traversal.append(postorderTraversal(node.getRight()));
-		traversal.append(node.getData() + "\n\n"); //TODO
+		traversal.append(node.getData() + "\n\n");
 		
 		return traversal.toString();
 	}

@@ -23,7 +23,7 @@ public class BST extends BinaryTree {
             return null;
         }
 
-        int diff = id.compareToIgnoreCase(node.getData().getId()); //TODO: check
+        int diff = id.compareToIgnoreCase(node.getData().getId());
         numOfComparisons++;
 
         if (diff < 0) {
@@ -37,11 +37,11 @@ public class BST extends BinaryTree {
         return node;
     }
 
-    public void insert(ProgramaNetflix data) { //TODO: check
+    public void insert(ProgramaNetflix data) {
         super.setRoot(insert(super.getRoot(), null, data));
     }
 
-    private Node insert(Node node, Node parent, ProgramaNetflix data) { //TODO: check
+    private Node insert(Node node, Node parent, ProgramaNetflix data) {
         if (node == null) {
             return new Node(parent, data);
         }
@@ -63,12 +63,12 @@ public class BST extends BinaryTree {
         super.setRoot(remove(super.getRoot(), id));
     }
 
-    private Node remove(Node node, String id) { //TODO
+    private Node remove(Node node, String id) {
         if (node == null) {
             return null;
         }
 
-        int diff = id.compareToIgnoreCase(node.getData().getId()); //TODO: check
+        int diff = id.compareToIgnoreCase(node.getData().getId());
 
         if (diff < 0) {
             node.setLeft(remove(node.getLeft(), id));
@@ -94,7 +94,7 @@ public class BST extends BinaryTree {
             return node.getLeft();
         }
 
-        Node predecessor = predecessor(node.getData().getId()); //TODO
+        Node predecessor = predecessor(node.getData().getId());
         node.setData(predecessor.getData());
         node.setLeft(remove(node.getLeft(), predecessor.getData().getId()));
 
@@ -133,7 +133,7 @@ public class BST extends BinaryTree {
         return node;
     }
 
-    private Node predecessor(String id) { //TODO
+    private Node predecessor(String id) {
         Node node = search(id);
         return node == null ? null : predecessor(node);
     }
@@ -154,7 +154,7 @@ public class BST extends BinaryTree {
         return parent;
     }
 
-    private Node successor(String id) { //TODO
+    private Node successor(String id) {
         Node node = search(id);
         return node == null ? null : successor(node);
     }
