@@ -6,10 +6,10 @@ public class ProgramaNetflix {
     private String type;
     private String description;
     private int releaseYear;
-    private String ageCertification; //TODO: confirm type
+    private String ageCertification;
     private int runtime;
-    private String[] genres; //TODO: confirm type
-    private String[] productionCountries; //TODO: confirm type
+    private String[] genres;
+    private String[] productionCountries;
     private int seasons;
     private String imdbId;
     private Double imdbScore;
@@ -195,8 +195,8 @@ public class ProgramaNetflix {
                 "\nAno de lançamento: " + this.getReleaseYear() +
                 "\nClassificação: " + this.getAgeCertification() +
                 "\nDuração: " + this.getRuntime() +
-                "\nGêneros: " + Arrays.toString(this.getGenres()) + //TODO
-                "\nPaíses: " + Arrays.toString(this.getProductionCountries()) + //TODO
+                "\nGêneros: " + Arrays.toString(this.getGenres()) +
+                "\nPaíses: " + Arrays.toString(this.getProductionCountries()) +
                 "\nNúmero de temporadas: " + seasons +
                 "\nIMDB ID: " + this.getImdbId() +
                 "\nIMDB score: " + imdbScore +
