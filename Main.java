@@ -25,6 +25,45 @@ public class Main {
         }
     }
 
+    public static void insertTitle(String[] lineValues, BST bst, AVL avl) {
+        String id = lineValues[0];
+        String titleName = lineValues[1].isBlank() ? "" : lineValues[1];
+        String type = lineValues[2];
+        String description = lineValues[3].isBlank() ? "" : lineValues[3];
+        int releaseYear = Integer.parseInt(lineValues[4]);
+        String ageCertification = lineValues[5].isBlank() ? "" : lineValues[5];
+        int runtime = Integer.parseInt(lineValues[6]);
+        String[] genres = new String[]{lineValues[7]}; // TODO
+        String[] productionCountries = new String[]{lineValues[8]}; // TODO
+        int seasons = lineValues[9].isBlank() ? -1 : (int) Double.parseDouble(lineValues[9]);
+        String imdbId = lineValues[10].isBlank() ? "" : lineValues[10];
+        Double imdbScore = lineValues[11].isBlank() ? -1 : Double.parseDouble(lineValues[11]);
+        int imdbVotes = lineValues[12].isBlank() ? -1 : (int) Double.parseDouble(lineValues[12]);
+        Double tmdbPopularity = lineValues[13].isBlank() ? -1 : Double.parseDouble(lineValues[13]);
+        Double tmdbScore = lineValues[14].isBlank() ? -1 : Double.parseDouble(lineValues[14]);
+
+        ProgramaNetflix title = new ProgramaNetflix(
+                id,
+                titleName,
+                type,
+                description,
+                releaseYear,
+                ageCertification,
+                runtime,
+                genres,
+                productionCountries,
+                seasons,
+                imdbId,
+                imdbScore,
+                imdbVotes,
+                tmdbPopularity,
+                tmdbScore
+        );
+
+        bst.insert(title);
+        avl.insert(title);
+    }
+
     public static void writeCsv(String filePath, String data) throws IOException {
         FileWriter fileWriter = new FileWriter(filePath);
         PrintWriter printWriter = new PrintWriter(fileWriter);
@@ -110,42 +149,7 @@ public class Main {
                                 break lineCreation;
                             }
 
-                            String id = lineValues[0];
-                            String titleName = lineValues[1].isBlank() ? "" : lineValues[1];
-                            String type = lineValues[2];
-                            String description = lineValues[3].isBlank() ? "" : lineValues[3];
-                            int releaseYear = Integer.parseInt(lineValues[4]);
-                            String ageCertification = lineValues[5].isBlank() ? "" : lineValues[5];
-                            int runtime = Integer.parseInt(lineValues[6]);
-                            String[] genres = new String[]{lineValues[7]}; // TODO
-                            String[] productionCountries = new String[]{lineValues[8]}; // TODO
-                            int seasons = lineValues[9].isBlank() ? -1 : (int) Double.parseDouble(lineValues[9]);
-                            String imdbId = lineValues[10].isBlank() ? "" : lineValues[10];
-                            Double imdbScore = lineValues[11].isBlank() ? -1 : Double.parseDouble(lineValues[11]);
-                            int imdbVotes = lineValues[12].isBlank() ? -1 : (int) Double.parseDouble(lineValues[12]);
-                            Double tmdbPopularity = lineValues[13].isBlank() ? -1 : Double.parseDouble(lineValues[13]);
-                            Double tmdbScore = lineValues[14].isBlank() ? -1 : Double.parseDouble(lineValues[14]);
-
-                            ProgramaNetflix title = new ProgramaNetflix(
-                                    id,
-                                    titleName,
-                                    type,
-                                    description,
-                                    releaseYear,
-                                    ageCertification,
-                                    runtime,
-                                    genres,
-                                    productionCountries,
-                                    seasons,
-                                    imdbId,
-                                    imdbScore,
-                                    imdbVotes,
-                                    tmdbPopularity,
-                                    tmdbScore
-                            );
-
-                            titlesBST.insert(title);
-                            titlesAVL.insert(title);
+                            insertTitle(lineValues, titlesBST, titlesAVL);
 
                             counter++; // TODO: remove
                         }
