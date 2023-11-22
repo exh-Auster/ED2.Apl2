@@ -1,3 +1,15 @@
+/**
+ * Implementação de uma árvore binária de busca.
+ *
+ * @author André Matteucci - 32273541
+ * @author Felipe Ribeiro  - 32212720
+ * @author Enzo Koji       - 32273754
+ *
+ * @see Node
+ * @see BinaryTree
+ * @see AVL
+ */
+
 public class BST extends BinaryTree {
     private int numOfComparisons;
 

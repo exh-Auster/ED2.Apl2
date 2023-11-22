@@ -1,11 +1,13 @@
 /**
- * //TODO
+ * Implementação de um nó para uso em uma árvore binária, BST e AVL.
  * 
  * @author André Matteucci - 32273541
  * @author Felipe Ribeiro  - 32212720
  * @author Enzo Koji       - 32273754
  * 
  * @see BinaryTree
+ * @see BST
+ * @see AVL
 */
 
 public class Node {

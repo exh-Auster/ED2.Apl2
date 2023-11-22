@@ -1,9 +1,13 @@
 /**
- * //TODO
+ * Implementação de uma árvore binária.
  * 
  * @author André Matteucci - 32273541
  * @author Felipe Ribeiro  - 32212720
  * @author Enzo Koji       - 32273754
+ *
+ * @see Node
+ * @see BST
+ * @see AVL
 */
 
 public class BinaryTree {
