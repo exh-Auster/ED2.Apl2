@@ -203,9 +203,15 @@ public class Main {
                         break;
                     }
 
-                    AVL stats3 = titlesAVL.stats3();
-                    System.out.println("\nFilmes com IMDB score acima do valor inserido, que não são de origem dos EUA, Canadá ou Reino Unido:\n");
-                    System.out.println(stats3.postorderTraversal());
+                    try {
+                        AVL stats3 = titlesAVL.stats3();
+                        System.out.println("\nFilmes com IMDB score acima do valor inserido, que não são de origem dos EUA, Canadá ou Reino Unido:\n");
+                        System.out.println(stats3.postorderTraversal());
+
+//                        writeCsv("stats3.csv", stats3.toCsv());
+                    } catch (NullPointerException e) {
+                        System.out.println("Nenhum resultado encontrado.");
+                    }
 
                     maxCompleted = 4;
                     sleep();
