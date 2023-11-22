@@ -95,8 +95,11 @@ public class Main {
             String option;
 
             System.out.println();
-            System.out.println(new String(new char[12]).replace("\0", "#") + " MENU " + new String(new char[12]).replace("\0", "#"));
-            System.out.println(" 1. Ler dados de arquivo");
+            System.out.println(new String(new char[maxCompleted >= 1 ? 49 : 9]).replace("\0", "#") + " MENU " + new String(new char[maxCompleted >= 1 ? 49 : 9]).replace("\0", "#"));
+
+            if (maxCompleted == 0) {
+                System.out.println(" 1. Ler dados de arquivo");
+            }
 
             if (maxCompleted >= 1) {
                 System.out.println();
