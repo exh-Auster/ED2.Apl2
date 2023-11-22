@@ -26,6 +26,10 @@ public class Main {
         }
     }
 
+    public static Scanner openFile(String filePath) throws FileNotFoundException {
+        return new Scanner(new File(filePath));
+    }
+
     public static void insertTitle(String[] lineValues, BST bst, AVL avl) {
         String id = lineValues[0];
         String titleName = lineValues[1].isBlank() ? "" : lineValues[1];
@@ -382,9 +386,5 @@ public class Main {
                     System.err.println("Opção inválida.\n");
             }
         }
-    }
-
-    public static Scanner openFile(String filePath) throws FileNotFoundException {
-        return new Scanner(new File(filePath));
     }
 }
