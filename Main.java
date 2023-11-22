@@ -363,7 +363,7 @@ public class Main {
                         break;
                     }
 
-                    System.out.printf("Altura da BST: %d%n", titlesBST.getHeight());
+                    System.out.printf("\nAltura da BST: %d%n", titlesBST.getHeight());
                     System.out.printf("Altura da AVL: %d%n", titlesAVL.getHeight());
 
                     maxCompleted = 10;
@@ -371,7 +371,7 @@ public class Main {
                     break;
                 case "11":
                     if (maxCompleted < 1) {
-                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar buscas.");
+                        System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar a nova gravação em disco.");
                         break;
                     }
 
