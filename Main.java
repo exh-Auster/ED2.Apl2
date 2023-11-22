@@ -177,6 +177,8 @@ public class Main {
                     System.out.println("\nSéries de animes com mais de uma temporada e classificação adequada para crianças:\n");
                     System.out.println(stats1.preorderTraversal());
 
+//                    writeCsv("./stats1.csv", stats1.toCsv());
+
                     maxCompleted = 2;
                     sleep();
                     break;
@@ -189,6 +191,8 @@ public class Main {
                     AVL stats2 = titlesAVL.stats2();
                     System.out.println("\nDocumentários históricos com classificação +16:\n");
                     System.out.println(stats2.inorderTraversal());
+
+//                    writeCsv("stats2.csv", stats2.toCsv());
 
                     maxCompleted = 3;
                     sleep();
@@ -216,6 +220,8 @@ public class Main {
                     System.out.println("\nProgramas de TV com 3 ou mais temporadas e IMDB score abaixo de 4:\n");
                     System.out.println(stats4.preorderTraversal());
 
+//                    writeCsv("stats4.csv", stats4.toCsv());
+
                     maxCompleted = 5;
                     sleep();
                     break;
@@ -228,6 +234,8 @@ public class Main {
                     AVL stats5 = titlesAVL.stats5();
                     System.out.println("\nFilmes com duração maior que três horas e score acima de 8:\n");
                     System.out.println(stats5.preorderTraversal());
+
+//                    writeCsv("stats5.csv", stats5.toCsv());
 
                     maxCompleted = 6;
                     sleep();
