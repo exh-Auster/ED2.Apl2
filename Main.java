@@ -38,8 +38,8 @@ public class Main {
         int releaseYear = Integer.parseInt(lineValues[4]);
         String ageCertification = lineValues[5].isBlank() ? "" : lineValues[5];
         int runtime = Integer.parseInt(lineValues[6]);
-        String[] genres = new String[]{lineValues[7]}; // TODO
-        String[] productionCountries = new String[]{lineValues[8]}; // TODO
+        String[] genres = new String[]{lineValues[7]};
+        String[] productionCountries = new String[]{lineValues[8]};
         int seasons = lineValues[9].isBlank() ? -1 : (int) Double.parseDouble(lineValues[9]);
         String imdbId = lineValues[10].isBlank() ? "" : lineValues[10];
         Double imdbScore = lineValues[11].isBlank() ? -1 : Double.parseDouble(lineValues[11]);
@@ -113,7 +113,7 @@ public class Main {
             option = m.next();
 
             switch (option) {
-                case "1": //TODO
+                case "1":
                     System.out.print("\nInsira o nome do arquivo CSV (ou ENTER para o padrão): ");
                     String filePath;
                     m.nextLine();
@@ -180,7 +180,7 @@ public class Main {
                     maxCompleted = 2;
                     sleep();
                     break;
-                case "3": //TODO
+                case "3":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
                         break;
@@ -206,7 +206,7 @@ public class Main {
                     maxCompleted = 4;
                     sleep();
                     break;
-                case "5": //TODO
+                case "5":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de analisá-los.");
                         break;
@@ -232,7 +232,7 @@ public class Main {
                     maxCompleted = 6;
                     sleep();
                     break;
-                case "7": //TODO
+                case "7":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de inserir novos programas.");
                         break;
@@ -285,7 +285,7 @@ public class Main {
                     maxCompleted = 7;
                     sleep();
                     break;
-                case "8": //TODO
+                case "8":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar buscas.");
                         break;
@@ -323,7 +323,7 @@ public class Main {
                     maxCompleted = 8;
                     sleep(2500);
                     break;
-                case "9": //TODO
+                case "9":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar remoções.");
                         break;
@@ -343,7 +343,7 @@ public class Main {
                     maxCompleted = 9;
                     sleep();
                     break;
-                case "10": //TODO
+                case "10":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de calcular a altura das árvores.");
                         break;
@@ -355,7 +355,7 @@ public class Main {
                     maxCompleted = 10;
                     sleep();
                     break;
-                case "11": //TODO
+                case "11":
                     if (maxCompleted < 1) {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de realizar buscas.");
                         break;
