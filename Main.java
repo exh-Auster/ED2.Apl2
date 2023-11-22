@@ -2,6 +2,7 @@ import java.io.*;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     /**
@@ -232,6 +233,50 @@ public class Main {
                         System.out.println("\nOpção indisponível. É necessário ler os dados do arquivo antes de inserir novos programas.");
                         break;
                     }
+
+                    String[] newTitleValues = new String[15];
+
+                    String id = "";
+
+                    Random rand = new Random();
+                    String idInt = String.format("%09d", rand.nextInt(999999999));
+
+                    System.out.println("\n1. Filme\n2. Série");
+                    System.out.print("\n Escolha o tipo de título a inserir: ");
+
+                    int type = m.nextInt();
+
+                    switch (type) {
+                        case 1:
+                            newTitleValues[0] = "tm" + idInt;
+                            newTitleValues[2] = "MOVIE";
+                            newTitleValues[9] = String.valueOf(-1);
+
+                            break;
+                        case 2:
+                            newTitleValues[0] = "ts" + idInt;
+                            newTitleValues[2] = "SHOW";
+                            newTitleValues[9] = String.valueOf(rand.nextInt(1, 15));
+
+                            break;
+                        default:
+                            System.out.println("Opção inválida.");
+                    }
+
+                    newTitleValues[3] = "";
+                    newTitleValues[4] = String.valueOf(rand.nextInt(1950, 2023));
+                    newTitleValues[5] = "";
+                    newTitleValues[6] = String.valueOf(rand.nextInt(1, 300));
+                    newTitleValues[7] = newTitleValues[8] = "";
+                    newTitleValues[10] = newTitleValues[11] = newTitleValues[12] = newTitleValues[13] = newTitleValues[14] = "";
+
+                    System.out.print("Insira o nome do título: ");
+                    m.nextLine();
+                    newTitleValues[1] = m.nextLine();
+
+                    insertTitle(newTitleValues, titlesBST, titlesAVL);
+
+                    System.out.println("Título inserido com sucesso:\n\n" + titlesAVL.search(newTitleValues[0]).getData().toString());
 
                     maxCompleted = 7;
                     sleep();
