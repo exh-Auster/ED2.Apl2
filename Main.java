@@ -144,8 +144,6 @@ public class Main {
                     String[] lineValues;
                     String nextLine = f.nextLine();
 
-                    int counter = 0; // TODO: remove
-
                     while (f.hasNextLine()) {
                         lineCreation: {
                             line = nextLine;
@@ -163,14 +161,10 @@ public class Main {
                             }
 
                             insertTitle(lineValues, titlesBST, titlesAVL);
-
-                            counter++; // TODO: remove
                         }
                     }
 
                     System.out.println("\nÁrvores criadas com sucesso!");
-                    sleep();
-                    System.err.printf("\nDEBUG: %d entries\n\n", counter); // TODO: remove
 
                     maxCompleted = 1;
                     sleep();
