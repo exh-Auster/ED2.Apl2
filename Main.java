@@ -135,7 +135,8 @@ public class Main {
 
                     Scanner f;
                     try {
-                        f = openFile(filePath);
+//                        f = openFile(filePath);
+                        f = new Scanner(new File("titles.csv"));
                     } catch (FileNotFoundException e) {
                         System.err.println("\nArquivo não encontrado - tente novamente.");
                         sleep();
