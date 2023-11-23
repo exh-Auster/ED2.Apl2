@@ -373,7 +373,8 @@ public class Main {
                     System.out.println();
 
                     try {
-                        titlesAVL.remove(removeId);
+                        titlesAVL.delete(removeId);
+                        System.out.printf("Programa %s removido com sucesso.%n", removeId);
                     } catch (NullPointerException e) {
                         System.out.printf("Programa %s não encontrado.%n", removeId);
                     }
