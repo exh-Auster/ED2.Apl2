@@ -1,5 +1,5 @@
 /**
- * //TODO
+ * Classe principal, com controle do fluxo do programa e chamada das funções para execução das funcionalidades.
  *
  * @author André Matteucci - 32273541
  * @author Felipe Ribeiro  - 32212720
@@ -33,11 +33,23 @@ public class Main {
             Thread.currentThread().interrupt();
         }
     }
-
+    /**
+     * Método utilizado para abrir um arquivo por meio de um scanner.
+     *
+     * @param filePath caminho do arquivo a ser aberto
+     */
     public static Scanner openFile(String filePath) throws FileNotFoundException {
         return new Scanner(new File(filePath));
     }
 
+    /**
+     * Método utilizado para converter uma linha da database em um objeto Programa Netflix,
+     * e posteriormente o inserir nas árvores BST e AVL.
+     *
+     * @param lineValues array com os valores a inserir
+     * @param bst        árvore BST para inserção
+     * @param avl        árvore AVL para inserção
+     */
     public static void insertTitle(String[] lineValues, BST bst, AVL avl) {
         String id = lineValues[0];
         String titleName = lineValues[1].isBlank() ? "" : lineValues[1];
@@ -77,6 +89,12 @@ public class Main {
         avl.insert(title);
     }
 
+    /**
+     * Método utilizado para escrever o conteúdo de uma
+     *
+     * @param filePath caminho do arquivo
+     * @param data     dados para escrita no arquivo
+     */
     public static void writeCsv(String filePath, String data) throws IOException {
         FileWriter fileWriter = new FileWriter(filePath);
         PrintWriter printWriter = new PrintWriter(fileWriter);
