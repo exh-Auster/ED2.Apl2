@@ -146,8 +146,7 @@ public class Main {
                     m.nextLine();
 
                     String opt = m.nextLine();
-
-                    filePath = opt.isEmpty() ? "./titles.csv" : opt;
+                    filePath = opt.isEmpty() ? "titles.csv" : opt;
 
                     Scanner f;
                     try {
