@@ -7,8 +7,6 @@
  */
 
 import java.io.*;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -335,21 +333,22 @@ public class Main {
 
 
                     try {
-                        Instant bstStart = Instant.now();
+                        long bstStart, bstEnd, bstTimeElapsed;
+
+                        bstStart = System.nanoTime();
                         Node bstResult = titlesBST.search(searchId);
-                        Instant bstEnd = Instant.now();
-                        Duration bstTimeElapsed = Duration.between(bstStart, bstEnd);
+                        bstEnd = System.nanoTime();
+                        bstTimeElapsed = bstEnd - bstStart;
 
 
-                        Instant avlStart = Instant.now();
+                        long avlStart = System.nanoTime();
                         Node avlResult = titlesAVL.search(searchId);
-                        Instant avlEnd = Instant.now();
-                        Duration timeElapsed = Duration.between(avlStart, avlEnd);
+                        long avlEnd = System.nanoTime();
+                        long timeElapsed = avlEnd - avlStart;
 
                         System.out.println(avlResult.getData().toString());
-
-                        System.out.printf("%nTempo de busca via BST: %d ns%n", bstTimeElapsed.toNanos());
-                        System.out.printf("Tempo de busca via AVL: %d ns%n", timeElapsed.toNanos());
+                        System.out.printf("%nTempo de busca via BST: %d ns%n",  bstTimeElapsed);
+                        System.out.printf("Tempo de busca via AVL: %d ns%n", timeElapsed);
 
                         System.out.printf("%nNúmero de comparações via BST: %d", titlesBST.getNumOfComparisons());
                         System.out.printf("%nNúmero de comparações via AVL: %d%n", titlesAVL.getNumOfComparisons());
